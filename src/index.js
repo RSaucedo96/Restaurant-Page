@@ -90,15 +90,14 @@ const Home = (function() {
         hoursTitle.classList.add('sectiontitle');
 
         hoursTitle.innerHTML = "Hours"
-
         hoursText.innerHTML = "Sunday: 8am - 8pm<br> Monday: 6am - 6pm<br> Tuesday: 6am - 6pm<br> \
                                Wednesday: 6am - 6pm<br> Thursday: 6am - 10pm<br> Friday:\
                                6am - 10pm<br> Saturday: 8am - 10pm";   
-        
+        hours.appendChild(hoursTitle);
         hours.appendChild(hoursText);
         CONTENTBOX.appendChild(hours);
     };
-    
+
     return {
         selected,
     }
