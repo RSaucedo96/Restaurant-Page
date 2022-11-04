@@ -21,7 +21,7 @@ MENU.addEventListener("click", (event)=>{
     else if (HOME.classList.contains('hidden')){
         HOME.classList.remove('hidden');
     }    
-    Home.selected();
+    Menu.selected();
 }
 );
 
@@ -105,9 +105,84 @@ const Home = (function() {
 })();
 
 const Menu = (function() {
+
+    const _display = () =>{
+        const menuItems = [
+            {
+                code: 'hp',
+                name: 'Health Potion',
+                description: 'The Healing Potion is a fruity bombshell of a cocktail\
+                              that has the iconic bright crimson along with a creamy coconut\
+                              fullness that will put a smile on your face even in the face of\
+                              imminent death.',
+                image: '<img src=   width="200" height="200"><img>'
+            },
+            {   
+                code: 'mp',
+                name: 'Mana Potion',
+                description: 'Fruity, fresh, and definitely tropical in tone,\
+                              with an extra sparkle for when you absolutely,\
+                              positively, must make something erupt into flames.',
+                image: '<img src=   width="200" height="200"><img>'
+            },
+            {   
+                code: 'mk',
+                name: 'Maiden Kiss',
+                description: "This stunning, fruity mixed drink combines vodka,\
+                              rum, blue curacao, Peach Schnapps, lemonade, and \
+                              a splash of pineapple juice, and it's guaranteed\
+                              to blow people's minds especially if you serve it\
+                              in a big goblet.",
+                image: '<img src=   width="200" height="200"><img>'
+            },
+            {
+                code: 'hw',
+                name: 'Holy Water',
+                description: "This stunning, fruity mixed drink combines vodka, rum, blue curacao,\
+                              Peach Schnapps, lemonade, and a splash of pineapple juice, and it's \
+                              guaranteed to blow people's minds especially if you serve it in a big goblet.",
+                image: '<img src=   width="200" height="200"><img>'
+            }
+        ]
+
+        menuItems.forEach(element => {
+            let itemWrapper = document.createElement('div');
+            let itemName = document.createElement('div');
+            let itemDescription = document.createElement('p');
+            let itemImg = document.createElement('div');
+
+            itemWrapper.setAttribute('id','item');
+            itemWrapper.classList.add(`${element.code}`);
+            itemName.classList.add('sectiontitle');
+
+            itemName.innerHTML=`${element.name}`;
+            itemDescription.innerHTML=`${element.description}`
+            itemWrapper.appendChild(itemName);
+            itemWrapper.appendChild(itemDescription);
+            itemWrapper.appendChild(itemImg);
+            CONTENTBOX.appendChild(itemWrapper);
+        });
+
+    };
     
+    const selected = () =>{
+        MENU.classList.add("hidden");
+        CONTENTBOX.innerHTML = "";
+        _display();
+    };
+
+    return {
+        selected,
+    }
 })();
 
 const Contact = (function() {
+    const selected = () =>{
+        CONTACT.classList.add("hidden");
+        CONTENTBOX.innerHTML = "";
+    };
     
+    return {
+        selected,
+    }
 })();
