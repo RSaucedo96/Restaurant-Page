@@ -1,0 +1,38 @@
+body {
+    margin: 0 auto;
+    background-image: url(img/basictile.png);
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: darkcyan;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.top-right-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+

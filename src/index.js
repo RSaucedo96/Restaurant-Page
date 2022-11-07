@@ -9,10 +9,7 @@ const CONTACT = document.getElementById("covercontact");
 const MENU = document.getElementById("covermenu");
 
 HOME.addEventListener("click", (event)=>{
-    if (CONTACT.classList.contains('hidden')){
-        CONTACT.classList.remove('hidden');
-    }
-    else if (MENU.classList.contains('hidden')){
+    if (MENU.classList.contains('hidden')){
         MENU.classList.remove('hidden');
     }    
     Home.selected();
@@ -20,24 +17,10 @@ HOME.addEventListener("click", (event)=>{
 );
 
 MENU.addEventListener("click", (event)=>{
-    if (CONTACT.classList.contains('hidden')){
-        CONTACT.classList.remove('hidden');
-    }
-    else if (HOME.classList.contains('hidden')){
+    if (HOME.classList.contains('hidden')){
         HOME.classList.remove('hidden');
     }    
     Menu.selected();
-}
-);
-
-CONTACT.addEventListener("click", (event)=>{
-    if (HOME.classList.contains('hidden')){
-        HOME.classList.remove('hidden');
-    }
-    else if (MENU.classList.contains('hidden')){
-        MENU.classList.remove('hidden');
-    }    
-    Home.selected();
 }
 );
 
@@ -167,6 +150,7 @@ const Menu = (function() {
             itemWrapper.setAttribute('id','item');
             itemWrapper.classList.add(`${element.code}`);
             itemName.classList.add('sectiontitle');
+            itemImg.classList.add('menuimg');
 
             itemName.innerHTML=`${element.name}`;
             itemDescription.innerHTML=`${element.description}`
@@ -185,17 +169,6 @@ const Menu = (function() {
         _display();
     };
 
-    return {
-        selected,
-    }
-})();
-
-const Contact = (function() {
-    const selected = () =>{
-        CONTACT.classList.add("hidden");
-        CONTENTBOX.innerHTML = "";
-    };
-    
     return {
         selected,
     }
