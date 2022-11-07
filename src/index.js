@@ -1,3 +1,8 @@
+import './style.css';
+import MP from './img/MP.png';
+import HP from './img/HP.png';
+import HW from './img/HW.png';
+
 const CONTENTBOX = document.getElementById("content");
 const HOME = document.getElementById("coverhome");
 const CONTACT = document.getElementById("covercontact");
@@ -105,6 +110,14 @@ const Home = (function() {
 })();
 
 const Menu = (function() {
+    const healthPot = new Image();
+    healthPot.src = HP;
+
+    const manaPot = new Image();
+    manaPot.src = MP;
+
+    const holyWat = new Image();
+    holyWat.src = HW;
 
     const _display = () =>{
         const menuItems = [
@@ -115,7 +128,7 @@ const Menu = (function() {
                               that has the iconic bright crimson along with a creamy coconut\
                               fullness that will put a smile on your face even in the face of\
                               imminent death.',
-                image: '<img src=   width="200" height="200"><img>'
+                image: healthPot
             },
             {   
                 code: 'mp',
@@ -123,7 +136,7 @@ const Menu = (function() {
                 description: 'Fruity, fresh, and definitely tropical in tone,\
                               with an extra sparkle for when you absolutely,\
                               positively, must make something erupt into flames.',
-                image: '<img src=   width="200" height="200"><img>'
+                image: manaPot
             },
             {   
                 code: 'mk',
@@ -133,7 +146,7 @@ const Menu = (function() {
                               a splash of pineapple juice, and it's guaranteed\
                               to blow people's minds especially if you serve it\
                               in a big goblet.",
-                image: '<img src=   width="200" height="200"><img>'
+                image: holyWat
             },
             {
                 code: 'hw',
@@ -141,7 +154,7 @@ const Menu = (function() {
                 description: "This stunning, fruity mixed drink combines vodka, rum, blue curacao,\
                               Peach Schnapps, lemonade, and a splash of pineapple juice, and it's \
                               guaranteed to blow people's minds especially if you serve it in a big goblet.",
-                image: '<img src=   width="200" height="200"><img>'
+                image: holyWat
             }
         ]
 
@@ -157,6 +170,7 @@ const Menu = (function() {
 
             itemName.innerHTML=`${element.name}`;
             itemDescription.innerHTML=`${element.description}`
+            itemImg.appendChild(element.image);
             itemWrapper.appendChild(itemName);
             itemWrapper.appendChild(itemDescription);
             itemWrapper.appendChild(itemImg);
